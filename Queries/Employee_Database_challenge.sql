@@ -2,7 +2,7 @@
 SELECT e.emp_no,
     e.first_name,
     e.last_name,
-	t.title,
+    t.title,
     t.from_date,
     t.to_date
 INTO retirement_titles
@@ -16,7 +16,7 @@ ORDER BY e.emp_no;
 SELECT DISTINCT ON (emp_no) emp_no,
     first_name,
     last_name,
-	title
+    title
 INTO unique_titles
 FROM retirement_titles
 WHERE (to_date = '9999-01-01')
@@ -33,7 +33,7 @@ ORDER BY COUNT DESC;
 SELECT DISTINCT ON (e.emp_no) e.emp_no,
     e.first_name,
     e.last_name,
-	e.birth_date,
+    e.birth_date,
     de.from_date,
     de.to_date,
     t.title
